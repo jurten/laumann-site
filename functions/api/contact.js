@@ -28,6 +28,33 @@ export async function onRequestPost(context) {
       return jsonResponse({ error: "Invalid email" }, 400);
     }
 
+    // Turnstile validation
+	const token = body.turnstileToken;
+
+	if (!token) {
+	  return jsonResponse({ error: "Missing Turnstile token" }, 400);
+	}
+
+	const verifyRes = await fetch(
+	  "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+	  {
+	    method: "POST",
+	    headers: {
+	      "Content-Type": "application/x-www-form-urlencoded"
+	    },
+	    body: new URLSearchParams({
+	      secret: env.TURNSTILE_SECRET_KEY,
+	      response: token
+	    })
+	  }
+	);
+
+	const verifyData = await verifyRes.json();
+
+	if (!verifyData.success) {
+	  return jsonResponse({ error: "Turnstile verification failed" }, 400);
+	}
+
     // Optional light origin check for MVP
     const origin = request.headers.get("Origin") || "";
     if (!origin.includes(".pages.dev") && !origin.includes("localhost")) {

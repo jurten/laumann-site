@@ -491,6 +491,7 @@
       </select>
       <p id="tramite-error" class="mt-2 text-sm text-error hidden"></p>
     </div>
+    <div class="cf-turnstile" data-sitekey="0x4AAAAAACxUaY_Kz3DRibRr"></div>
     <button
       id="submit-btn"
       type="submit"
@@ -556,7 +557,7 @@
 </div>
 </div>
 </footer>
-<script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer>
   // ===== FORM ELEMENTS =====
   const form = document.getElementById("contact-form");
   const nombre = document.getElementById("nombre");
@@ -642,11 +643,12 @@
 
     try {
       const payload = {
-        nombre: nombreValue,
-        email: emailValue,
-        telefono: telefonoValue,
-        tramite: tramiteValue,
-        company: document.getElementById("company")?.value || "" // 🔒 honeypot
+  	nombre: nombreValue,
+	email: emailValue,
+	telefono: telefonoValue,
+	tramite: tramiteValue,
+	company: document.getElementById("company")?.value || "",
+	turnstileToken: document.querySelector('[name="cf-turnstile-response"]')?.value
       };
 
       const res = await fetch("/api/contact", {
