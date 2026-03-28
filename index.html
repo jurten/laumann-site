@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Laumann & Asociados | Expertos en Derecho Previsional</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#fbf8fe",
+              "surface-container-highest": "#e4e1e7",
+              "inverse-primary": "#adc7f8",
+              "outline-variant": "#c4c6cf",
+              "inverse-on-surface": "#f3f0f5",
+              "on-background": "#1b1b1f",
+              "background": "#fbf8fe",
+              "surface-bright": "#fbf8fe",
+              "primary-container": "#001b3d",
+              "inverse-surface": "#303034",
+              "tertiary-container": "#351001",
+              "on-secondary-container": "#626566",
+              "secondary": "#5c5f60",
+              "on-primary-fixed": "#001b3d",
+              "on-error-container": "#93000a",
+              "on-secondary": "#ffffff",
+              "surface-variant": "#e4e1e7",
+              "surface-tint": "#455f8a",
+              "error": "#ba1a1a",
+              "on-surface": "#1b1b1f",
+              "outline": "#74777f",
+              "on-primary-fixed-variant": "#2c4771",
+              "surface-dim": "#dcd9de",
+              "primary-fixed-dim": "#adc7f8",
+              "primary": "#000000",
+              "on-primary-container": "#6a85b2",
+              "secondary-fixed": "#e1e3e4",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-container": "#b2755b",
+              "on-secondary-fixed-variant": "#454748",
+              "secondary-fixed-dim": "#c5c7c8",
+              "primary-fixed": "#d6e3ff",
+              "surface-container-high": "#eae7ed",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "tertiary": "#000000",
+              "error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#fdb698",
+              "secondary-container": "#e1e3e4",
+              "on-surface-variant": "#44474e",
+              "on-error": "#ffffff",
+              "on-secondary-fixed": "#191c1d",
+              "tertiary-fixed": "#ffdbcd",
+              "on-tertiary-fixed": "#351001",
+              "surface-container": "#f0edf2",
+              "surface-container-low": "#f6f2f8",
+              "on-tertiary-fixed-variant": "#6b3a24"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 24px 32px -12px rgba(27, 27, 31, 0.04);
+        }
+        .border-error {
+            border-color: #ba1a1a !important;
+        }
+        button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md">
+  <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+
+    <!-- Logo -->
+    <a class="text-xl font-serif italic tracking-tight text-slate-900 dark:text-slate-50" href="#">
+      Laumann & Asociados
+    </a>
+
+    <!-- Desktop Links -->
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" href="#expertise">Práctica Profesional</a>
+      <a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" href="#process">Proceso</a>
+      <a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" href="#about">Nosotros</a>
+      <a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" href="#contact">Contacto</a>
+
+      <a href="#contact" class="inline-block bg-primary-container text-on-primary px-6 py-2 rounded-md hover:opacity-80 transition-opacity active:scale-[0.98] duration-300">
+        Consultar
+      </a>
+    </div>
+
+    <!-- Mobile Button -->
+    <div class="md:hidden">
+      <button
+        id="menu-btn"
+        type="button"
+        class="text-on-surface transition-all duration-200 hover:opacity-70 active:scale-95"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+
+  </div>
+</nav>
+<div id="mobile-menu"
+  class="fixed inset-0 bg-surface/95 backdrop-blur-xl z-[60] opacity-0 pointer-events-none transition-all duration-300 ease-out md:hidden"
+>
+  <!-- Close Button -->
+  <button
+    id="close-menu-btn"
+    class="absolute top-6 right-6 text-on-surface transition-all duration-200 hover:opacity-70 active:scale-95"
+    aria-label="Cerrar menú"
+  >
+    <span class="material-symbols-outlined text-3xl">close</span>
+  </button>
+
+  <!-- Menu Content -->
+  <div class="flex flex-col justify-center items-center h-full gap-10 text-xl">
+
+    <a href="#expertise" class="text-on-surface hover:text-primary transition-colors">Práctica Profesional</a>
+    <a href="#process" class="text-on-surface hover:text-primary transition-colors">Proceso</a>
+    <a href="#about" class="text-on-surface hover:text-primary transition-colors">Nosotros</a>
+    <a href="#contact" class="text-on-surface hover:text-primary transition-colors">Contacto</a>
+
+    <a href="#contact" class="bg-primary-container text-on-primary px-8 py-3 rounded-md mt-6">
+      Consultar
+    </a>
+
+  </div>
+</div>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-surface">
+<div class="max-w-7xl mx-auto px-8 relative z-10">
+<div class="max-w-3xl">
+<h1 class="font-headline text-5xl md:text-7xl leading-tight text-primary mb-8">
+                        Justicia en tu Previsión: <br/>
+<span class="italic">Expertos en Derecho Social.</span>
+</h1>
+<p class="font-body text-xl text-on-surface-variant mb-12 leading-relaxed max-w-xl">
+                        Aseguramos su futuro a través de una defensa legal estratégica en pensiones y seguridad social. Excelencia jurídica con un enfoque humano.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#contact" class="inline-block bg-primary-container text-on-primary px-10 py-4 rounded-md font-semibold text-lg hover:opacity-90 transition-all active:scale-[0.98] text-center">
+  Consulta Gratuita
+</a>
+<a href="#about" class="inline-block border-b border-outline-variant/30 text-on-surface px-6 py-4 font-semibold text-lg hover:border-primary transition-all">
+  Nuestra Trayectoria
+</a>
+</div>
+</div>
+</div>
+<!-- Aesthetic Background Element -->
+<div class="absolute top-0 right-0 w-1/2 h-full bg-surface-container-low -z-0 rounded-l-[10rem] hidden lg:block"></div>
+<div class="absolute bottom-10 right-20 w-64 h-96 opacity-10 hidden lg:block">
+<img alt="Legal statue background" class="object-cover h-full w-full grayscale" data-alt="Close up of Lady Justice statue in minimalist style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALGs-ADlqc24fp38ReNy8L9y4O1IB_yUaaLj55JiTXkZgeE_u8ROrZiS2RK4RVRCC9GrVXmPCwvUlFKykZhpyBYqQuFsPlUMcejEjOCxArvcF2PMCRCS79lWjKCUnjTWpHbQMsaUUWITDl8VDrH_7IPUAlNUtVSnqr974zS2Q-6gJXIWTvaOcbztdpeavnm7RTp9YCkUurglARVbNl6eMsqdHAMBJmdfi3w9mb4KgEEL7sSYbtw6UGqxuTqoVsMJ_f2_1xrCimmNA"/>
+</div>
+</section>
+<!-- Expertise/Services: Bento Grid Style -->
+<section class="py-24 bg-surface-container-low" id="expertise">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline text-4xl md:text-5xl text-primary mb-4">Especialización Jurídica</h2>
+<p class="text-on-surface-variant text-lg">Servicios curados para la protección integral de sus derechos previsionales.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Card 1 -->
+<div class="md:col-span-8 bg-surface-container-lowest p-10 editorial-shadow rounded-xl flex flex-col justify-between group hover:bg-primary-container transition-all duration-300 ease-out hover:-translate-y-[2px]">
+<span class="material-symbols-outlined text-4xl mb-6 text-on-primary-container group-hover:text-on-primary">account_balance_wallet</span>
+<h3 class="font-headline text-3xl mb-4 text-primary group-hover:text-on-primary">Jubilaciones y Pensiones</h3>
+<p class="text-on-surface-variant group-hover:text-on-primary/80 text-lg leading-relaxed mb-8">Gestión integral de haberes jubilatorios, pensiones por fallecimiento y regímenes especiales con máxima celeridad.</p>
+<a class="inline-flex items-center text-primary-container group-hover:text-on-primary font-semibold" href="#">
+</a>
+</div>
+<!-- Card 2 -->
+ <div class="md:col-span-4 bg-surface-container-lowest p-10 editorial-shadow rounded-xl flex flex-col justify-between group hover:bg-primary-container transition-all duration-300 ease-out hover:-translate-y-[2px]">
+  <div>
+    <span class="material-symbols-outlined text-4xl mb-6 text-on-primary-container group-hover:text-on-primary">
+      trending_up
+    </span>
+
+    <h3 class="font-headline text-2xl mb-4 text-primary group-hover:text-on-primary">
+      Reajustes de Haberes
+    </h3>
+
+    <p class="text-on-surface-variant text-base group-hover:text-on-primary/80">
+      Actualización y corrección de montos previsionales según jurisprudencia vigente.
+    </p>
+  </div>
+</div>
+<!-- Card 3 -->
+<div class="md:col-span-4 bg-surface-container-lowest p-10 editorial-shadow rounded-xl flex flex-col justify-between group hover:bg-primary-container transition-all duration-300 ease-out hover:-translate-y-[2px]">
+  <div>
+    <span class="material-symbols-outlined text-4xl mb-6 text-on-primary-container group-hover:text-on-primary">
+      medical_services
+    </span>
+
+    <h3 class="font-headline text-2xl mb-4 text-primary group-hover:text-on-primary">
+      Amparos de Salud
+    </h3>
+
+    <p class="text-on-surface-variant text-base group-hover:text-on-primary/80">
+      Protección inmediata para coberturas médicas y tratamientos de alta complejidad.
+    </p>
+  </div>
+</div>
+<!-- Card 4 -->
+<div class="md:col-span-8 bg-surface-container-lowest p-10 editorial-shadow rounded-xl flex flex-col md:flex-row gap-8 items-center group hover:bg-primary-container transition-all duration-300 hover:-translate-y-1">
+
+  <div class="flex-1">
+    <span class="material-symbols-outlined text-4xl mb-6 text-on-primary-container group-hover:text-on-primary">
+      family_history
+    </span>
+
+    <h3 class="font-headline text-2xl mb-4 text-primary group-hover:text-on-primary">
+      Sucesiones
+    </h3>
+
+    <p class="text-on-surface-variant text-base leading-relaxed group-hover:text-on-primary/80">
+      Asesoramiento integral en procesos sucesorios y transmisión de bienes con enfoque conciliador.
+    </p>
+  </div>
+
+  <!-- Image stays completely static -->
+  <div class="w-full md:w-48 h-32 rounded-lg overflow-hidden">
+    <img class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPjjhLR-7BTUFucYpFzaJb8PBmqhC7L2vJxlFaZ4HQ11zPp-MrQPw0lN8A_MA7uJDR2sUUxgidfO-_3IbtFXBvbI3jgqPEFJjzx8zFB07enJRg4YVgU3SMBJRrNRBVHIjoe_mEuw0TOMeAqmIglYa6jYppURPWCU-zYgfddRhuIPW1nQdDZCXe48SvSvLBqSvt466SUbXxnXZcd_jfoaXHRo89Q5rByPnpTMryAa5vq-3uRd9iZGtlW5-l0XX4bFBBU9CHV8yD_9c"/>
+  </div>
+</div>
+
+</div>
+</div>
+</section>
+<!-- Process: Vertical Timeline -->
+<section class="py-24 bg-surface" id="process">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+<div>
+<h2 class="font-headline text-4xl md:text-5xl text-primary mb-8">Nuestra Metodología</h2>
+<p class="text-on-surface-variant text-lg mb-12 leading-relaxed">
+                            Entendemos que cada caso es único. Hemos diseñado un proceso fluido que prioriza su tranquilidad y la efectividad jurídica.
+                        </p>
+<div class="space-y-12">
+
+  <!-- Step 1 -->
+  <div class="flex gap-8">
+    <div class="flex flex-col items-center">
+      <div class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-semibold text-base">
+        01
+      </div>
+      <div class="w-[1px] flex-1 bg-surface-container-highest mt-4"></div>
+    </div>
+
+    <div>
+      <h4 class="font-headline text-2xl text-primary mb-2">
+        Consulta Inicial
+      </h4>
+      <p class="text-on-surface-variant">
+        Análisis exhaustivo de su situación particular y diagnóstico de viabilidad legal.
+      </p>
+    </div>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="flex gap-8">
+    <div class="flex flex-col items-center">
+      <div class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-semibold text-base">
+        02
+      </div>
+      <div class="w-[1px] flex-1 bg-surface-container-highest mt-4"></div>
+    </div>
+
+    <div>
+      <h4 class="font-headline text-2xl text-primary mb-2">
+        Diseño Estratégico
+      </h4>
+      <p class="text-on-surface-variant">
+        Elaboración de la hoja de ruta jurídica y recolección de pruebas necesarias.
+      </p>
+    </div>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="flex gap-8">
+    <div class="flex flex-col items-center">
+      <div class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-semibold text-base">
+        03
+      </div>
+    </div>
+
+    <div>
+      <h4 class="font-headline text-2xl text-primary mb-2">
+        Resolución & Seguimiento
+      </h4>
+      <p class="text-on-surface-variant">
+        Ejecución de la defensa y acompañamiento constante hasta la obtención del beneficio.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+</div>
+<div class="relative">
+<div class="aspect-[4/5] bg-surface-container rounded-2xl overflow-hidden editorial-shadow">
+<img alt="Professional workspace" class="w-full h-full object-cover" data-alt="Minimalist office space with professional atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhTGXbPNhtlexW2zS314YxwTmniL_sYhtrJYAjLNh0hQKhvPqGfztycQQ26Y7CXcDjL4LDl48x5S8t6kMndfdX3a8kxTIpmX6w4DO_OXv3YomQ3MqAThbx3rILPj49SC3UC1q2cmtNqge97B_GLUC92iiN0lcTluIsNnIZIrB1xVrieV9ZSf7wd2xMfxi2N6fOSVwkqWvdOsKsETF6qaLHze-3WCNPU6ZxjicitaFcSs0RRPg5RojW-zktH1tTWWvHP-7umqIEWFk"/>
+</div>
+<div class="absolute -bottom-10 -left-10 bg-primary-container text-on-primary p-12 rounded-xl max-w-xs editorial-shadow">
+<p class="font-headline text-xl italic mb-4">"La excelencia no es un acto, sino un hábito."</p>
+<p class="text-sm tracking-widest uppercase opacity-70">Filosofía Legal</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Professional Section -->
+<section class="py-24 bg-surface-container-low" id="about">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-1/2">
+  <div class="relative inline-block group">
+    <img
+      alt="Abogada Previsional Portrait"
+      class="rounded-lg editorial-shadow relative z-10 w-full max-w-md aspect-[3/4] object-cover transition-all duration-500 ease-out group-hover:grayscale group-hover:blur-[2px]"
+      data-alt="Professional portrait of a female lawyer in a modern suit"
+      src="./María_Primer_Plano.png"
+    />
+
+    <div class="absolute inset-0 z-20 flex items-end rounded-lg bg-primary-container/25 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100">
+      <div class="p-6 md:p-8">
+        <p class="font-headline text-2xl md:text-3xl italic leading-tight text-white">
+          “La excelencia no es un acto, sino un hábito.”
+        </p>
+      </div>
+    </div>
+
+    <div class="absolute -top-6 -right-6 w-full h-full border border-primary-container/10 rounded-lg -z-0"></div>
+  </div>
+</div>
+<div class="w-full md:w-1/2">
+  <h4 class="text-primary-container font-semibold tracking-widest uppercase text-sm mb-3">
+    Sobre la Profesional
+  </h4>
+
+  <h2 class="font-headline text-4xl md:text-5xl text-primary leading-tight">
+    Laumann, María Angélica
+  </h2>
+
+  <p class="text-primary-container italic tracking-wide text-sm mt-1 mb-8">
+    Defensa con Humanismo
+  </p>
+
+  <div class="space-y-6 text-lg text-on-surface-variant leading-relaxed">
+    <p>
+      Con más de 15 años de trayectoria en el derecho previsional, mi compromiso ha sido siempre el mismo: transformar la complejidad legal en soluciones tangibles para mis clientes.
+    </p>
+    <p>
+      Mi enfoque combina el rigor técnico de la ley social con una empatía profunda hacia quienes han dedicado su vida al trabajo y hoy buscan el reconocimiento que les corresponde por derecho.
+    </p>
+  </div>
+
+<div class="mt-12 grid grid-cols-2 gap-8">
+<div>
+<h5 class="font-headline text-3xl text-primary">500+</h5>
+<p class="text-sm text-on-surface-variant">Casos Resueltos</p>
+</div>
+<div>
+<h5 class="font-headline text-3xl text-primary">15+</h5>
+<p class="text-sm text-on-surface-variant">Años de Experiencia</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8 text-center">
+<h2 class="font-headline text-4xl text-primary mb-16 italic">Confianza que Trasciende</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<blockquote class="p-8 border-l border-surface-container-highest italic text-lg text-on-surface-variant text-left">
+                        "Encontré la claridad que necesitaba después de años de trámites infructuosos. Una profesional excepcional."
+                        <cite class="block mt-6 not-italic font-bold text-sm text-primary">— Elena M., Jubilada</cite>
+</blockquote>
+<blockquote class="p-8 border-l border-surface-container-highest italic text-lg text-on-surface-variant text-left">
+                        "La calidez humana y la eficiencia técnica marcaron la diferencia en mi reajuste de haberes."
+                        <cite class="block mt-6 not-italic font-bold text-sm text-primary">— Roberto G., Pensionado</cite>
+</blockquote>
+<blockquote class="p-8 border-l border-surface-container-highest italic text-lg text-on-surface-variant text-left">
+                        "Transparencia total desde el primer día. Los resultados superaron mis expectativas."
+                        <cite class="block mt-6 not-italic font-bold text-sm text-primary">— Silvia D., Docente</cite>
+</blockquote>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-24 bg-surface-container" id="contact">
+<div class="max-w-7xl mx-auto px-8">
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden editorial-shadow flex flex-col lg:flex-row">
+<div class="lg:w-1/2 p-12 lg:p-20">
+  <h2 class="font-headline text-4xl text-primary mb-8">Inicie su Gestión</h2>
+
+  <form id="contact-form" class="space-y-8" novalidate>
+    <input
+      type="text"
+      name="company"
+      id="company"
+      autocomplete="off"
+      tabindex="-1"
+      class="hidden"
+    />
+    <div>
+      <label class="block text-xs uppercase tracking-widest text-on-surface-variant mb-2">
+        Nombre Completo
+      </label>
+      <input
+        id="nombre"
+        name="nombre"
+        class="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary-container px-0 py-3 text-lg placeholder:text-outline-variant"
+        placeholder="Escriba su nombre"
+        type="text"
+      />
+      <p id="nombre-error" class="mt-2 text-sm text-error hidden"></p>
+    </div>
+
+    <div>
+      <label class="block text-xs uppercase tracking-widest text-on-surface-variant mb-2">
+        Email de Contacto
+      </label>
+      <input
+        id="email"
+        name="email"
+        class="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary-container px-0 py-3 text-lg placeholder:text-outline-variant"
+        placeholder="ejemplo@correo.com"
+        type="email"
+      />
+      <p id="email-error" class="mt-2 text-sm text-error hidden"></p>
+    </div>
+    <div>
+      <label class="block text-xs uppercase tracking-widest text-on-surface-variant mb-2">
+        Teléfono <span class="normal-case tracking-normal opacity-70">(opcional)</span>
+      </label>
+      <input
+        id="telefono"
+        name="telefono"
+        class="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary-container px-0 py-3 text-lg placeholder:text-outline-variant"
+        placeholder="Ej: +54 9 221 123 5678"
+        type="tel"
+      />
+      <p id="telefono-error" class="mt-2 text-sm text-error hidden"></p>
+    </div>
+    <div>
+      <label class="block text-xs uppercase tracking-widest text-on-surface-variant mb-2">
+        Tipo de Trámite
+      </label>
+      <select
+        id="tramite"
+        name="tramite"
+        class="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary-container px-2 py-3 text-lg text-on-surface-variant"
+      >
+        <option value="" selected disabled hidden>Seleccione tipo de trámite</option>
+        <option value="Jubilaciones">Jubilaciones</option>
+        <option value="Reajustes">Reajustes</option>
+        <option value="Amparos de Salud">Amparos de Salud</option>
+        <option value="Otro">Otro</option>
+      </select>
+      <p id="tramite-error" class="mt-2 text-sm text-error hidden"></p>
+    </div>
+    <button
+      id="submit-btn"
+      type="submit"
+      class="w-full lg:w-auto bg-primary-container text-on-primary px-12 py-4 rounded-md font-semibold text-lg hover:opacity-90 transition-all active:scale-[0.98] mt-8"
+    >
+      Enviar Consulta
+    </button>
+    <p id="form-message" class="mt-4 text-sm hidden"></p>
+  </form>
+</div>
+<div class="lg:w-1/2 bg-primary-container p-12 lg:p-20 text-on-primary flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-3xl mb-12">Detalles de Contacto</h3>
+<div class="space-y-8">
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined mt-1">mail</span>
+<div>
+<p class="font-bold text-lg">Email</p>
+<p class="opacity-70">malaumann@gmail.com</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined mt-1">call</span>
+<div>
+<p class="font-bold text-lg">Teléfono</p>
+<p class="opacity-70">+54 9 221 525-0538</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined mt-1">schedule</span>
+<div>
+<p class="font-bold text-lg">Horario de Atención</p>
+<p class="opacity-70">Lunes a Viernes de 9:00 a 17:00 hs</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 pt-12 border-t border-on-primary/10">
+<p class="text-sm opacity-50 italic">Atención personalizada con cita previa.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200/15 dark:border-slate-800/15 bg-slate-100 dark:bg-slate-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 w-full max-w-7xl mx-auto">
+<div class="mb-8 md:mb-0 text-center md:text-left">
+<span class="font-serif text-lg italic text-slate-900 dark:text-slate-100">Laumann & Asociados</span>
+<p class="font-body text-sm tracking-wide text-slate-500 dark:text-slate-400 mt-2">© 2026 Laumann & Asociados. Todos los derechos reservados. Excelencia Legal en seguridad social y pensiones.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a href="./privacidad.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">
+  Política de Privacidad
+</a>
+
+<a href="./accesibilidad.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">
+  Accesibilidad
+</a>
+</div>
+</div>
+</footer>
+<script>
+  // ===== FORM ELEMENTS =====
+  const form = document.getElementById("contact-form");
+  const nombre = document.getElementById("nombre");
+  const email = document.getElementById("email");
+  const telefono = document.getElementById("telefono");
+  const tramite = document.getElementById("tramite");
+  const submitBtn = document.getElementById("submit-btn");
+  const formMessage = document.getElementById("form-message");
+
+  const nombreError = document.getElementById("nombre-error");
+  const emailError = document.getElementById("email-error");
+  const telefonoError = document.getElementById("telefono-error");
+  const tramiteError = document.getElementById("tramite-error");
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /^[\d\s()+-]{6,20}$/;
+
+  // ===== HELPERS =====
+  function showError(input, errorElement, message) {
+    errorElement.textContent = message;
+    errorElement.classList.remove("hidden");
+    input.classList.add("border-error");
+  }
+
+  function clearError(input, errorElement) {
+    errorElement.textContent = "";
+    errorElement.classList.add("hidden");
+    input.classList.remove("border-error");
+  }
+
+  function showFormMessage(message, isError = false) {
+    formMessage.textContent = message;
+    formMessage.classList.remove("hidden", "text-error", "text-primary-container");
+    formMessage.classList.add(isError ? "text-error" : "text-primary-container");
+  }
+
+  // ===== FORM SUBMIT =====
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    let isValid = true;
+
+    const nombreValue = nombre.value.trim();
+    const emailValue = email.value.trim();
+    const telefonoValue = telefono.value.trim();
+    const tramiteValue = tramite.value.trim();
+
+    clearError(nombre, nombreError);
+    clearError(email, emailError);
+    clearError(telefono, telefonoError);
+    clearError(tramite, tramiteError);
+    formMessage.classList.add("hidden");
+
+    // ===== VALIDATION =====
+    if (!nombreValue) {
+      showError(nombre, nombreError, "Por favor, ingrese su nombre completo.");
+      isValid = false;
+    }
+
+    if (!emailValue) {
+      showError(email, emailError, "Por favor, ingrese su email.");
+      isValid = false;
+    } else if (!emailRegex.test(emailValue)) {
+      showError(email, emailError, "Por favor, ingrese un email válido. Ejemplo: nombre@correo.com");
+      isValid = false;
+    }
+
+    if (telefonoValue && !phoneRegex.test(telefonoValue)) {
+      showError(telefono, telefonoError, "Por favor, ingrese un teléfono válido.");
+      isValid = false;
+    }
+
+    if (!tramiteValue) {
+      showError(tramite, tramiteError, "Por favor, seleccione un tipo de trámite.");
+      isValid = false;
+    }
+
+    if (!isValid) return;
+
+    // ===== LOADING STATE =====
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Enviando...";
+
+    try {
+      const payload = {
+        nombre: nombreValue,
+        email: emailValue,
+        telefono: telefonoValue,
+        tramite: tramiteValue,
+        company: document.getElementById("company")?.value || "" // 🔒 honeypot
+      };
+
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) {
+        throw new Error("Error al enviar");
+      }
+
+      form.reset();
+
+      showFormMessage(
+        "Su consulta fue enviada correctamente. Nos pondremos en contacto a la brevedad."
+      );
+
+    } catch (error) {
+      showFormMessage(
+        "No pudimos enviar su consulta en este momento. Por favor, intente nuevamente.",
+        true
+      );
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Enviar Consulta";
+    }
+  });
+
+  // ===== MOBILE MENU =====
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const closeMenuBtn = document.getElementById("close-menu-btn");
+
+  let isOpen = false;
+
+  function openMenu() {
+    mobileMenu.classList.remove("opacity-0", "pointer-events-none");
+    mobileMenu.classList.add("opacity-100");
+    menuBtn.setAttribute("aria-expanded", "true");
+    isOpen = true;
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.add("opacity-0", "pointer-events-none");
+    mobileMenu.classList.remove("opacity-100");
+    menuBtn.setAttribute("aria-expanded", "false");
+    isOpen = false;
+  }
+
+  menuBtn.addEventListener("click", () => {
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  // close with X button
+  closeMenuBtn?.addEventListener("click", closeMenu);
+
+  // close when clicking links
+  document.querySelectorAll("#mobile-menu a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  // optional: click outside to close
+  mobileMenu.addEventListener("click", (e) => {
+    if (e.target === mobileMenu) {
+      closeMenu();
+    }
+  });
+
+</script>
+</body></html>

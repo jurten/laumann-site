@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accesibilidad | Laumann & Asociados</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            surface: '#fbf8fe',
+            'surface-container-low': '#f6f2f8',
+            'surface-container-lowest': '#ffffff',
+            'surface-container-highest': '#e4e1e7',
+            'primary-container': '#001b3d',
+            primary: '#000000',
+            'on-primary': '#ffffff',
+            'on-surface': '#1b1b1f',
+            'on-surface-variant': '#44474e',
+            'outline-variant': '#c4c6cf'
+          },
+          fontFamily: {
+            headline: ['Newsreader', 'serif'],
+            body: ['Manrope', 'sans-serif']
+          },
+          boxShadow: {
+            editorial: '0 24px 32px -12px rgba(27, 27, 31, 0.04)'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary">
+  <nav class="sticky top-0 z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/15">
+    <div class="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between gap-6">
+      <a href="./Laumann Web.html" class="font-headline italic text-2xl text-primary">Laumann &amp; Asociados</a>
+      <a href="./Laumann Web.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Volver al inicio</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="py-20 md:py-28 bg-surface">
+      <div class="max-w-4xl mx-auto px-8">
+        <p class="text-primary-container font-semibold tracking-[0.18em] uppercase text-xs md:text-sm mb-4">Compromiso de Lectura Clara</p>
+        <h1 class="font-headline text-5xl md:text-7xl leading-tight text-primary mb-6">Accesibilidad</h1>
+        <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">En Laumann &amp; Asociados trabajamos para ofrecer un sitio web claro, legible y fácil de utilizar para todas las personas, especialmente para quienes necesitan una experiencia digital simple y comprensible.</p>
+      </div>
+    </section>
+
+    <section class="pb-24 bg-surface-container-low">
+      <div class="max-w-4xl mx-auto px-8">
+        <article class="bg-surface-container-lowest rounded-2xl shadow-editorial p-8 md:p-14 space-y-12">
+          <section class="space-y-4">
+            <h2 class="font-headline text-3xl md:text-4xl text-primary">Nuestro compromiso</h2>
+            <p class="text-on-surface-variant text-lg leading-relaxed">Nos esforzamos por brindar una navegación simple, con textos legibles, estructura clara y contenido comprensible, para que cada persona pueda acceder a la información con comodidad.</p>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="font-headline text-3xl md:text-4xl text-primary">Medidas adoptadas</h2>
+            <ul class="space-y-3 text-on-surface-variant text-lg leading-relaxed list-disc pl-6">
+              <li>Uso de tipografías legibles y jerarquías visuales claras.</li>
+              <li>Tamaños de texto y contrastes pensados para facilitar la lectura.</li>
+              <li>Estructura simple, con secciones ordenadas y navegación comprensible.</li>
+              <li>Botones y enlaces visibles, con textos descriptivos.</li>
+              <li>Redacción clara y directa para reducir la complejidad innecesaria.</li>
+            </ul>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="font-headline text-3xl md:text-4xl text-primary">Mejora continua</h2>
+            <p class="text-on-surface-variant text-lg leading-relaxed">La accesibilidad es un proceso permanente. Revisamos y mejoramos de forma continua el sitio para ofrecer una experiencia más clara, estable y útil.</p>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="font-headline text-3xl md:text-4xl text-primary">Asistencia</h2>
+            <p class="text-on-surface-variant text-lg leading-relaxed">Si tiene dificultades para visualizar contenidos, completar formularios o navegar este sitio, puede comunicarse con nosotros. Estaremos disponibles para brindarle una alternativa de contacto y la ayuda necesaria.</p>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full bg-surface border-t border-outline-variant/20">
+    <div class="max-w-7xl mx-auto px-8 py-12 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+      <div class="max-w-md text-center md:text-left">
+        <p class="font-headline text-xl italic text-primary">Laumann &amp; Asociados</p>
+        <p class="text-sm text-on-surface-variant mt-4 leading-relaxed">Atención legal clara, humana y profesional en derecho previsional y seguridad social.</p>
+      </div>
+      <div class="flex flex-col md:items-end gap-3 text-center md:text-right">
+        <a href="./privacidad.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Política de Privacidad</a>
+        <a href="./accesibilidad.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">Accesibilidad</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
