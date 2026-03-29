@@ -55,11 +55,18 @@ export async function onRequestPost(context) {
 	  return jsonResponse({ error: "Turnstile verification failed" }, 400);
 	}
 
-    // Optional light origin check for MVP
-    const origin = request.headers.get("Origin") || "";
-    if (!origin.includes(".pages.dev") && !origin.includes("localhost")) {
-      return jsonResponse({ error: "Forbidden" }, 403);
-    }
+	const origin = request.headers.get("Origin") || "";
+	const allowedOrigins = [
+	  "http://localhost:3000",
+	  "http://127.0.0.1:3000",
+	  "https://laumann-site.pages.dev",
+	  "https://laumannyasociados.com.ar",
+	  "https://www.laumannyasociados.com.ar"
+	];
+
+	if (!allowedOrigins.includes(origin)) {
+	  return jsonResponse({ error: "Forbidden" }, 403);
+	}
 
     // Send email through Resend
     const resendResponse = await fetch("https://api.resend.com/emails", {
