@@ -9,7 +9,8 @@ export async function onRequestPost(context) {
       email = "",
       telefono = "",
       tramite = "",
-      company = ""
+      company = "",
+      turnstileToken = ""
     } = body;
 
     // Honeypot anti-spam
@@ -29,44 +30,36 @@ export async function onRequestPost(context) {
     }
 
     // Turnstile validation
-	const token = body.turnstileToken;
+    if (!turnstileToken) {
+      return jsonResponse({ error: "Missing Turnstile token" }, 400);
+    }
 
-	if (!token) {
-	  return jsonResponse({ error: "Missing Turnstile token" }, 400);
-	}
+    const verifyRes = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams({
+          secret: env.TURNSTILE_SECRET_KEY,
+          response: turnstileToken,
+          remoteip: request.headers.get("CF-Connecting-IP") || ""
+        })
+      }
+    );
 
-	const verifyRes = await fetch(
-	  "https://challenges.cloudflare.com/turnstile/v0/siteverify",
-	  {
-	    method: "POST",
-	    headers: {
-	      "Content-Type": "application/x-www-form-urlencoded"
-	    },
-	    body: new URLSearchParams({
-	      secret: env.TURNSTILE_SECRET_KEY,
-	      response: token
-	    })
-	  }
-	);
+    const verifyData = await verifyRes.json();
 
-	const verifyData = await verifyRes.json();
-
-	if (!verifyData.success) {
-	  return jsonResponse({ error: "Turnstile verification failed" }, 400);
-	}
-
-	const origin = request.headers.get("Origin") || "";
-	const allowedOrigins = [
-	  "http://localhost:3000",
-	  "http://127.0.0.1:3000",
-	  "https://laumann-site.pages.dev",
-	  "https://laumannyasociados.com.ar",
-	  "https://www.laumannyasociados.com.ar"
-	];
-
-	if (!allowedOrigins.includes(origin)) {
-	  return jsonResponse({ error: "Forbidden" }, 403);
-	}
+    if (!verifyData.success) {
+      return jsonResponse(
+        {
+          error: "Turnstile verification failed",
+          details: verifyData["error-codes"] || []
+        },
+        400
+      );
+    }
 
     // Send email through Resend
     const resendResponse = await fetch("https://api.resend.com/emails", {
@@ -100,7 +93,13 @@ export async function onRequestPost(context) {
 
     return jsonResponse({ success: true }, 200);
   } catch (error) {
-    return jsonResponse({ error: "Server error" }, 500);
+    return jsonResponse(
+      {
+        error: "Server error",
+        detail: error instanceof Error ? error.message : String(error)
+      },
+      500
+    );
   }
 }
 
