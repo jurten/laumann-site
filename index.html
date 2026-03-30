@@ -104,6 +104,13 @@
             opacity: 0.7;
             cursor: not-allowed;
         }
+	.cf-turnstile {
+	    max-width: 100%;
+	}
+
+	.cf-turnstile iframe {
+	    max-width: 100% !important;
+	}
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary">
@@ -511,7 +518,13 @@
       </select>
       <p id="tramite-error" class="mt-2 text-sm text-error hidden"></p>
     </div>
-    <div class="cf-turnstile" data-sitekey="0x4AAAAAACxUaY_Kz3DRibRr" data-size="flexible"></div>
+    <div class="w-full overflow-hidden">
+	  <div
+	    class="cf-turnstile"
+	    data-sitekey="0x4AAAAAACxUaY_Kz3DRibRr"
+	    data-size="flexible"
+	  ></div>
+    </div>
     <button
       id="submit-btn"
       type="submit"
