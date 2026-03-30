@@ -69,7 +69,7 @@ export async function onRequestPost(context) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        from: "Laumann Web <onboarding@resend.dev>",
+	from: "Laumann Web <consultas@send.laumannyasociados.com.ar>",
         to: [env.CONTACT_TO_EMAIL],
         subject: "Nueva consulta desde la web",
         html: `
