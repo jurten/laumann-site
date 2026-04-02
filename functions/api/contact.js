@@ -116,7 +116,7 @@ export async function onRequestPost(context) {
 
             <p>Nos estaremos comunicando con usted por este medio o telefónicamente, en caso de haberlo informado.</p>
 
-            <p>Saludos cordiales,<br>Laumann & Asociados</p>
+            <p>Saludos cordiales,<br>Estudio Jurídico Laumann & Asociados</p>
           `
         })
       });
