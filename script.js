@@ -4,6 +4,7 @@
   const email = document.getElementById("email");
   const telefono = document.getElementById("telefono");
   const tramite = document.getElementById("tramite");
+  const mensaje = document.getElementById("mensaje");
   const submitBtn = document.getElementById("submit-btn");
   const formMessage = document.getElementById("form-message");
 
@@ -11,6 +12,7 @@
   const emailError = document.getElementById("email-error");
   const telefonoError = document.getElementById("telefono-error");
   const tramiteError = document.getElementById("tramite-error");
+  const mensajeError = document.getElementById("mensaje-error");
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const phoneRegex = /^[\d\s()+-]{6,20}$/;
@@ -44,11 +46,13 @@
     const emailValue = email.value.trim();
     const telefonoValue = telefono.value.trim();
     const tramiteValue = tramite.value.trim();
+    const mensajeValue = mensaje.value.trim();
 
     clearError(nombre, nombreError);
     clearError(email, emailError);
     clearError(telefono, telefonoError);
     clearError(tramite, tramiteError);
+    clearError(mensaje, mensajeError);
     formMessage.classList.add("hidden");
 
     // ===== VALIDATION =====
@@ -87,6 +91,7 @@
 	email: emailValue,
 	telefono: telefonoValue,
 	tramite: tramiteValue,
+	mensaje: mensajeValue,
 	company: document.getElementById("company")?.value || "",
 	turnstileToken: document.querySelector('[name="cf-turnstile-response"]')?.value
       };

@@ -9,6 +9,7 @@ export async function onRequestPost(context) {
       email = "",
       telefono = "",
       tramite = "",
+      mensaje = "",
       company = "",
       turnstileToken = ""
     } = body;
@@ -78,6 +79,9 @@ export async function onRequestPost(context) {
           <p><strong>Email:</strong> ${escapeHtml(email)}</p>
           <p><strong>Teléfono:</strong> ${escapeHtml(telefono) || "No proporcionado"}</p>
           <p><strong>Trámite:</strong> ${escapeHtml(tramite)}</p>
+	  <p><strong>Situación:</strong><br>
+            ${mensaje ? escapeHtml(mensaje) : "No especificada"}
+	  </p>
         `,
         reply_to: email.trim()
       })
