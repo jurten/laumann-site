@@ -104,13 +104,13 @@ export async function onRequestPost(context) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          from: "Laumann & Asociados <consultas@send.laumannasociados.com.ar>",
+          from: "Estudio Jurídico Laumann & Asociados <consultas@send.laumannasociados.com.ar>",
           to: [email.trim()],
           subject: "Hemos recibido su consulta",
           html: `
             <p>Hola ${escapeHtml(nombre)},</p>
 
-            <p>Gracias por comunicarse con Laumann & Asociados.</p>
+            <p>Gracias por comunicarse con el Estudio Jurídico Laumann & Asociados.</p>
 
             <p>Hemos recibido su consulta correctamente y será revisada a la brevedad.</p>
 
