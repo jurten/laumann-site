@@ -62,15 +62,15 @@ export async function onRequestPost(context) {
       );
     }
 
-    // Send email through Resend
-    const resendResponse = await fetch("https://api.resend.com/emails", {
+    // 1) Email to the firm
+    const notifyFirmResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${env.RESEND_API_KEY}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-	from: "Laumann Web <consultas@send.laumannasociados.com.ar>",
+        from: "Laumann Web <consultas@send.laumannasociados.com.ar>",
         to: [env.CONTACT_TO_EMAIL],
         subject: "Nueva consulta desde la web",
         html: `
@@ -79,19 +79,56 @@ export async function onRequestPost(context) {
           <p><strong>Email:</strong> ${escapeHtml(email)}</p>
           <p><strong>Teléfono:</strong> ${escapeHtml(telefono) || "No proporcionado"}</p>
           <p><strong>Trámite:</strong> ${escapeHtml(tramite)}</p>
-	  <p><strong>Situación:</strong><br>
+          <p><strong>Situación:</strong><br>
             ${mensaje ? escapeHtml(mensaje) : "No especificada"}
-	  </p>
+          </p>
         `,
         reply_to: email.trim()
       })
     });
 
-    if (!resendResponse.ok) {
-      const errorText = await resendResponse.text();
+    if (!notifyFirmResponse.ok) {
+      const errorText = await notifyFirmResponse.text();
       return jsonResponse(
         { error: "Email send failed", detail: errorText },
         502
+      );
+    }
+
+    // 2) Auto-reply to the user (best effort)
+    try {
+      const autoReplyResponse = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${env.RESEND_API_KEY}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          from: "Laumann & Asociados <consultas@send.laumannasociados.com.ar>",
+          to: [email.trim()],
+          subject: "Hemos recibido su consulta",
+          html: `
+            <p>Hola ${escapeHtml(nombre)},</p>
+
+            <p>Gracias por comunicarse con Laumann & Asociados.</p>
+
+            <p>Hemos recibido su consulta correctamente y será revisada a la brevedad.</p>
+
+            <p>Nos estaremos comunicando con usted por este medio o telefónicamente, en caso de haberlo informado.</p>
+
+            <p>Saludos cordiales,<br>Laumann & Asociados</p>
+          `
+        })
+      });
+
+      if (!autoReplyResponse.ok) {
+        const autoReplyError = await autoReplyResponse.text();
+        console.log("Auto-reply failed:", autoReplyError);
+      }
+    } catch (autoReplyError) {
+      console.log(
+        "Auto-reply request failed:",
+        autoReplyError instanceof Error ? autoReplyError.message : String(autoReplyError)
       );
     }
 
